@@ -19,7 +19,11 @@ function getComputerChoice() {
 
 }
 
-
+//Ask user input
+function getHumanChoice() {
+    let humanChoice = (prompt('Input your choice: ')).toLowerCase();
+    return humanChoice;
+}
 
 //TESTING
 playRound(humanSelection, computerSelection);
