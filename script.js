@@ -25,5 +25,9 @@ function getHumanChoice() {
     return humanChoice;
 }
 
+//Create variables for score
+let humanScore = 0;
+let computerScore = 0;
+
 //TESTING
 playRound(humanSelection, computerSelection);
