@@ -28,6 +28,7 @@ function getHumanChoice() {
 //Create variables for score
 let humanScore = 0;
 let computerScore = 0;
+let tieScore = 0;
 
 //Compare the two values
 function playRound(humanChoice, computerChoice) {
@@ -39,6 +40,7 @@ function playRound(humanChoice, computerChoice) {
             switch (computerChoice) {
                 case 'rock':
                     console.log(`It's a tie! Rock ties with Rock`);
+                    tieScore++;
                     break;
                 case 'paper':
                     console.log(`You lose! Paper beats Rock`);
@@ -58,6 +60,7 @@ function playRound(humanChoice, computerChoice) {
                     break;
                 case 'paper':
                     console.log(`It's a tie! Paper ties with Paper`);
+                    tieScore++;
                     break;
                 case 'scissors':
                     console.log(`You lose! Scissors beats Paper`);
@@ -77,6 +80,7 @@ function playRound(humanChoice, computerChoice) {
                     break;
                 case 'scissors':
                     console.log(`It's a tie! Scissors ties with Scissors`);
+                    tieScore++;
                     break;
             }
             break;
@@ -84,10 +88,22 @@ function playRound(humanChoice, computerChoice) {
 
     console.log(`Human Score: ${humanScore}`);
     console.log(`Computer Score: ${computerScore}`);
+    console.log(`Ties Score: ${tieScore}`);
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//Make a function to play 5 rounds
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
 
-//TESTING
-playRound(humanSelection, computerSelection);
+    if (humanScore > computerScore) {
+        console.log(`You WON with a score of ${humanScore} against the computer score of ${computerScore}`);
+    } else if (computerScore > humanScore) {
+        console.log(`You LOST with a score of ${humanScore} against the computer score of ${computerScore}`);
+    }
+}
+
+playGame();
