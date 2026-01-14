@@ -1,4 +1,4 @@
-//Generate random number
+/* //Generate random number
 function getComputerChoice() {
     let randomNumber = (Math.floor(Math.random() * 3) + 1);
     let computerChoice = '';
@@ -16,7 +16,6 @@ function getComputerChoice() {
     }
 
     return computerChoice;
-
 }
 
 //Ask user input
@@ -104,6 +103,6 @@ function playGame() {
     } else if (computerScore > humanScore) {
         console.log(`You LOST with a score of ${humanScore} against the computer score of ${computerScore}`);
     }
-}
+} */
 
-playGame();
+//playGame();
