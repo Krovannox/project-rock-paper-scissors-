@@ -4,6 +4,19 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
+function playRound(playerChoice) {
+    const computerChoice = getComputerChoice();
+
+    console.log(`Computer choice: ${computerChoice}`);
+    console.log(`Player choice: ${playerChoice}`);
+}
+
+const gameButtons = document.querySelectorAll('.game-button');
+gameButtons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        playRound(e.currentTarget.dataset.value);
+    });
+});
 /*
 
 //Ask user input
