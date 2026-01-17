@@ -7,18 +7,28 @@ function getComputerChoice() {
 function playRound(playerChoice) {
     const computerChoice = getComputerChoice();
 
+    const playerChoiceDisplay = document.querySelector('#player-choice-display');
+    playerChoiceDisplay.textContent = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
     console.log(`Player choice: ${playerChoice}`);
+
+    const computerChoiceDisplay = document.querySelector('#computer-choice-display');
+    computerChoiceDisplay.textContent = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
     console.log(`Computer choice: ${computerChoice}`);
 
+    const resultDisplay = document.querySelector('#result-display');
+
     if (computerChoice === playerChoice) {
+        resultDisplay.textContent = 'Tie';
         console.log('Tie');
     } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
         (playerChoice === 'paper' && computerChoice === 'rock') ||
         (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
+        resultDisplay.textContent = 'Victory';
         console.log('Victory');
     } else {
+        resultDisplay.textContent = 'Defeat';
         console.log('Defeat');
     }
 }
